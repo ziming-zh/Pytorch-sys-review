@@ -16,6 +16,7 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [TensorRT](https://github.com/NVIDIA/TensorRT)               | Nvidia / Special Support for GPU                             |
 | [AI Template](https://github.com/facebookincubator/AITemplate) | New from Meta (renders neural network into high performance CUDA/HIP C++ code. Specialized for FP16 TensorCore (NVIDIA GPU) and MatrixCore (AMD GPU) inference.) |
+|                                                              |                                                              |
 
 ### Serving
 
@@ -26,13 +27,14 @@
 
 ## Issues on Pytorch GH Repo
 
-| Page                                                         | Description                             | Possible cause                                        |
-| ------------------------------------------------------------ | --------------------------------------- | ----------------------------------------------------- |
-| [`torch.inverse` multi-threading RuntimeError: lazy wrapper should be called at most once ](https://github.com/pytorch/pytorch/issues/90613) | Multithreading error                    | parallel unit testing **extra cuda synchronizations** |
-| [`NotImplementedError` when using `torch.distributed.launch`for multiGPUs](https://github.com/pytorch/pytorch/issues/91408) | Data Parallel Error                     | pytorch native `DistributedDataParallel` module       |
-| [Option to let DistributedDataParallel know in advance unused parameters at each forward pass](https://github.com/pytorch/pytorch/issues/90171) | DistributedDataParallel Performance     | find_unused_parameters=True                           |
-| [PyTorch 2.1.0 Performance regression from PyTorch 2.0.1 · Issue #117081 · pytorch/pytorch (github.com)](https://github.com/pytorch/pytorch/issues/117081) | Speed reduction for new pytorch version |                                                       |
-|                                                              |                                         |                                                       |
+| Page                                                         | Description                                                  | Possible cause                                        |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ----------------------------------------------------- |
+| [`torch.inverse` multi-threading RuntimeError: lazy wrapper should be called at most once ](https://github.com/pytorch/pytorch/issues/90613) | Multithreading error                                         | parallel unit testing **extra cuda synchronizations** |
+| [`NotImplementedError` when using `torch.distributed.launch`for multiGPUs](https://github.com/pytorch/pytorch/issues/91408) | Data Parallel Error                                          | pytorch native `DistributedDataParallel` module       |
+| [Option to let DistributedDataParallel know in advance unused parameters at each forward pass](https://github.com/pytorch/pytorch/issues/90171) | DistributedDataParallel Performance                          | find_unused_parameters=True                           |
+| [PyTorch 2.1.0 Performance regression from PyTorch 2.0.1 · Issue #117081 · pytorch/pytorch (github.com)](https://github.com/pytorch/pytorch/issues/117081) | Speed reduction for new pytorch version                      | ?                                                     |
+| [RuntimeError: CUDA error: an illegal memory access was encountered using vmap and model ensembling call for cuda system](https://github.com/pytorch/pytorch/issues/116320) | Multiple models process multiple batches of data and models call for cuda to process data | ?                                                     |
+| [Segmentation faults in DataLoader (in latest torch version)](https://github.com/pytorch/pytorch/issues/91245) | This happens with `num_workers=16` or `12`, `8`, `4`, `3`.   | ？                                                    |
 
 
 
@@ -52,7 +54,7 @@
 |                                                              |           |                                                              |
 | [PyTorch Model Performance Analysis and Optimization ](https://towardsdatascience.com/pytorch-model-performance-analysis-and-optimization-10c3c5822869) | Post      | Performance                                                  |
 | [PyTorch Profiler](https://pytorch.org/blog/introducing-pytorch-profiler-the-new-and-improved-performance-tool/) |           | Tensorboard visualized pytorch profiler                      |
-| [(beta) Pytorch Layer Profiler](https://pytorch.org/tutorials/intermediate/fx_profiling_tutorial.html) |           |                                                              |
+| [(beta) Pytorch Layer Profiler](https://pytorch.org/tutorials/intermediate/fx_profiling_tutorial.html) |           | Detailed layer-to-layer profiler of pytorch                  |
 | [microsoft/AI-System: System for AI Education Resource. (github.com)](https://github.com/microsoft/AI-System?tab=readme-ov-file) | Microsoft | An online AI System Course to help students learn the whole stack of systems that support AI |
 |                                                              |           |                                                              |
 
