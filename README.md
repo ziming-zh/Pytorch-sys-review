@@ -58,3 +58,12 @@
 | [microsoft/AI-System: System for AI Education Resource. (github.com)](https://github.com/microsoft/AI-System?tab=readme-ov-file) | Microsoft | An online AI System Course to help students learn the whole stack of systems that support AI |
 |                                                              |           |                                                              |
 
+## Multiple DDP Training with Torchrun
+
+| Ways                                   |                                                              | Common Troubleshooting                                    |
+| -------------------------------------- | ------------------------------------------------------------ | --------------------------------------------------------- |
+| torchrun for multi-machine distributed | `-nproc_per_node=4\<br />nnodes=2<br />node_rank=0<br />rdzv_id=456<br />rdzv_backend=c10d<br />rdzv_endpoint=172.31.43.139:29603<br />multinode_torchrun.py 50 10` | * nodes communication<br />* network interface (firewall) |
+| Slrum scheduler                        | `#SBATCH--job-name=multinode-example<br/>#SBATCH--nodes=4<br/>#SBATCH--ntasks=4<br/>#SBATCH--gpus-per-task=1#SBATCH --cpus-per-task=4<br/>nodes=( $( scontrol show hostnames $SLURM JOB NODELIST ) )nodes array=($nodes)head_node=$(nodes_array[0]}head node_ip=$(srun --nodes=1 --ntasks=1 -w "$head_node" hostname --ip-address` | nodes bandwidth issues                                    |
+|                                        |                                                              |                                                           |
+|                                        |                                                              |                                                           |
+
