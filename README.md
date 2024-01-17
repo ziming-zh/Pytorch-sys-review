@@ -10,6 +10,10 @@
 | [Silent bugs in deep learning frameworks: an empirical study of Keras and TensorFlow](https://link.springer.com/article/10.1007/s10664-023-10389-6) | Out of the 1,168 issues , 77 reproducible silent bugs        | [dataset](https://github.com/amin-nikanjam/SilentBugsInTensorFlowKeras) |
 |                                                              |                                                              |                                                              |
 
-## AI-sys Review
 
-[]
+
+## Previous Progress
+
+[Review update 1/15](https://github.com/ziming-zh/Pytorch-sys-review/blob/main/Broad-review.md#related-works--studies)
+
+[Collected pytorch issues](https://github.com/ziming-zh/Pytorch-sys-review/blob/main/Broad-review.md#issues-on-pytorch-gh-repo)
